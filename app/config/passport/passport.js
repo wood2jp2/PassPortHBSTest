@@ -57,19 +57,19 @@ module.exports = function(passport, user) {
   //LOCAL SIGNIN
   passport.use('local-signin', new LocalStrategy({
       // by default, local strategy uses username and password, we will override with email
-      usernameField: 'email',
+      usernameField: 'username',
       passwordField: 'password',
       passReqToCallback: true // allows us to pass back the entire request to the callback
     },
 
-    function(req, email, password, done) {
+    function(req, username, password, done) {
       var User = user;
       var isValidPassword = function(userpass, password) {
         return bCrypt.compareSync(password, userpass);
       }
       User.findOne({
         where: {
-          email: email
+          username: username
         }
       }).then(function(user) {
         console.log(user.password);
