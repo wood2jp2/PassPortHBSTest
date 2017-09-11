@@ -5,6 +5,7 @@ const
   session = require('express-session'),
   bodyParser = require('body-parser'),
   env = require('dotenv').load(),
+  path = require('path'),
   exphbs = require('express-handlebars');
 
 //For BodyParser
@@ -29,10 +30,6 @@ app.engine('hbs', exphbs({
 }));
 app.set('view engine', '.hbs');
 
-app.get('/', function(req, res) {
-  res.send('Welcome to Passport with Sequelize');
-});
-
 // models
 var models = require('./app/models');
 
@@ -41,6 +38,7 @@ var authRoute = require('./app/routes/auth.js')(app, passport);
 
 //load passport strategies
 require('./app/config/passport/passport.js')(passport, models.user);
+require('./app/routes/htmlRoutes.js')(app);
 
 //Sync Database
 models.sequelize.sync().then(function() {
@@ -51,6 +49,6 @@ models.sequelize.sync().then(function() {
 
 app.listen(5000, function(err) {
   if (!err)
-    console.log("Site is live");
+    console.log("Site is live on 5000");
   else console.log(err)
 });
