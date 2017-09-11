@@ -12,7 +12,11 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, '../views/home.html'))
   });
 
-  app.get('signup', function(req, res) {
-    res.sendFile(path.join(__dirname, '../views/signup.html'))
+  app.get('/signup', function(req, res) {
+    res.sendFile(path.join(__dirname, '../views/signup.hbs'))
+  });
+
+  app.get('signin', function(req, res) {
+    res.sendFile(path.join(__dirname, '../views/signin'))
   })
 };

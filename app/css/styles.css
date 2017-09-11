@@ -1,0 +1,56 @@
+/* #f5da6a */
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);
+form {
+  color: #d14348;
+}
+
+button {
+  color: #000000;
+}
+
+#sign-up {
+  color: #4285F4;
+}
+
+.jumbotron.center {
+  border: #d14348;
+}
+
+#larry {
+  image-orientation: center;
+  margin-right: 50%;
+}
+
+#post {
+  padding-top: 80px;
+}
+
+#barhome {
+  float: right;
+  color: #000000;
+  font: 50px;
+}
+
+#bar {
+  padding-right: 100px;
+  padding-top: 65px;
+  color: #000000;
+  font: 50px;
+}
+
+nav {
+  color: #000000;
+}
+
+#demo {
+  text-align: center;
+}
+
+.media {
+  padding: 15px;
+  padding-right: 50px;
+}
+
+
+/*# sourceMappingURL=styles.css.map */
