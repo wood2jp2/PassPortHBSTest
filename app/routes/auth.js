@@ -1,5 +1,4 @@
 var authController = require('../controllers/authcontroller.js');
-var db = require('../models/user.js');
 
 module.exports = function(app, passport) {
 
@@ -26,17 +25,5 @@ module.exports = function(app, passport) {
       return next();
     res.redirect('/signin');
   };
-
-  // app.post("/api/users", function(req, res) {
-  //   console.log(req.body);
-  //   db.User.create({
-  //     username: req.body.username,
-  //     password: req.body.password,
-  //     name: req.body.name,
-  //     email: req.body.email
-  //   }).then(function(results) {
-  //     res.end();
-  //   });
-  // });
 
 }

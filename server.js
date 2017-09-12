@@ -22,7 +22,7 @@ app.use(session({
 })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
-app.use(express.static('app'));
+app.use(express.static('app/public'));
 
 // For Handlebars
 app.set('views', './app/views')

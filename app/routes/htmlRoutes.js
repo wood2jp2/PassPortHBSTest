@@ -18,5 +18,9 @@ module.exports = function(app) {
 
   app.get('signin', function(req, res) {
     res.sendFile(path.join(__dirname, '../views/signin'))
+  });
+
+  app.get('/dashboard', function(req, res) {
+    res.sendFile(path.join(__dirname, '../views/dashboard.hbs'))
   })
 };

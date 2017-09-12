@@ -27,6 +27,11 @@ var x = setInterval(function() {
 }, 1000);
 
 
+// module.exports = {
+//   validate: function() {
+//     console.log('hi')
+//   }
+// };
 // $(document).ready(function() {
 //
 //   // Giving the postCategorySelect a default value
@@ -64,22 +69,22 @@ var x = setInterval(function() {
 //
 //     // posts the data
 //     function postNewUserData() {
-//       console.log(newUser);
-//       $.post('/api/users', newUser, function(req, res) {
-//         console.log('new user added'); //works
-//
-//         // clears inputs once posted
-//         $(usernameInput).val('');
-//         $(passwordInput).val('');
-//         $(confirmPasswordInput).val('');
-//         $(nameInput).val('');
-//         $(emailInput).val('');
-//
-//         // toggles modal (obviously)
-//         $('#myModal').modal('toggle');
-//       });
-//
-//       // leads user to blog page once they finished signing up
+//       //   console.log(newUser);
+//       //   $.post('/api/users', newUser, function(req, res) {
+//       //     console.log('new user added'); //works
+//       //
+//       //     // clears inputs once posted
+//       //     $(usernameInput).val('');
+//       //     $(passwordInput).val('');
+//       //     $(confirmPasswordInput).val('');
+//       //     $(nameInput).val('');
+//       //     $(emailInput).val('');
+//       //
+//       //     // toggles modal (obviously)
+//       $('#myModal').modal('toggle');
+//       //   });
+//       //
+//       //   // leads user to blog page once they finished signing up
 //       $('#continueToSite').on('click', function() {
 //         window.location.href = '/dashboard';
 //       });
