@@ -26,71 +26,65 @@ var x = setInterval(function() {
   }
 }, 1000);
 
+$(document).ready(function() {
 
-// module.exports = {
-//   validate: function() {
-//     console.log('hi')
-//   }
-// };
-// $(document).ready(function() {
-//
-//   // Giving the postCategorySelect a default value
-//   // Adding an event listener for when the form is submitted
-//   var form = $("#sign-up");
-//
-//   $(form).on("submit", function handleFormSubmit(event) {
-//
-//     event.preventDefault();
-//
-//     var url = window.location.origin;
-//
-//     // Getting jQuery references to the post body, title, form, and category select
-//     var usernameInput = $("#user-name"),
-//       passwordInput = $("#password"),
-//       confirmPasswordInput = $('#confirmPassword'),
-//       nameInput = $("#name"),
-//       emailInput = $("#email"),
-//
-//       // new user object outlining user inputted properties
-//       newUser = {
-//         username: usernameInput.val().trim(),
-//         password: passwordInput.val().trim(),
-//         confirmPassword: confirmPasswordInput.val().trim(),
-//         name: nameInput.val().trim(),
-//         email: emailInput.val().trim()
-//       };
-//
-//     // long if then statement, making sure passwords match and no fields were left uncompleted before posting the data
-//     function validateNewUserData() {
-//       !newUser.username || !newUser.password || !newUser.confirmPassword || !newUser.name || !newUser.email ?
-//         alert('All fields are required. Please fill out accordingly.') :
-//         newUser.password !== newUser.confirmPassword ? alert('Your passwords don\'t match!') : postNewUserData();
-//     };
-//
-//     // posts the data
-//     function postNewUserData() {
-//       //   console.log(newUser);
-//       //   $.post('/api/users', newUser, function(req, res) {
-//       //     console.log('new user added'); //works
-//       //
-//       //     // clears inputs once posted
-//       //     $(usernameInput).val('');
-//       //     $(passwordInput).val('');
-//       //     $(confirmPasswordInput).val('');
-//       //     $(nameInput).val('');
-//       //     $(emailInput).val('');
-//       //
-//       //     // toggles modal (obviously)
-//       $('#myModal').modal('toggle');
-//       //   });
-//       //
-//       //   // leads user to blog page once they finished signing up
-//       $('#continueToSite').on('click', function() {
-//         window.location.href = '/dashboard';
-//       });
-//     };
-//
-//     validateNewUserData();
-//
-//   });
-// });
+  // Giving the postCategorySelect a default value
+  // Adding an event listener for when the form is submitted
+  var form = $("#sign-up");
+
+  $(form).on("submit", function handleFormSubmit(event) {
+
+    event.preventDefault();
+
+    var url = window.location.origin;
+
+    // Getting jQuery references to the post body, title, form, and category select
+    var usernameInput = $("#user-name"),
+      passwordInput = $("#password"),
+      confirmPasswordInput = $('#confirmPassword'),
+      nameInput = $("#name"),
+      emailInput = $("#email"),
+
+      // new user object outlining user inputted properties
+      newUser = {
+        username: usernameInput.val().trim(),
+        password: passwordInput.val().trim(),
+        confirmPassword: confirmPasswordInput.val().trim(),
+        name: nameInput.val().trim(),
+        email: emailInput.val().trim()
+      };
+
+    // long if then statement, making sure passwords match and no fields were left uncompleted before posting the data
+    function validateNewUserData() {
+      !newUser.username || !newUser.password || !newUser.confirmPassword || !newUser.name || !newUser.email ?
+        alert('All fields are required. Please fill out accordingly.') :
+        newUser.password !== newUser.confirmPassword ? alert('Your passwords don\'t match!') : postNewUserData();
+    };
+
+    // posts the data
+    function postNewUserData() {
+      console.log(newUser);
+      $.post('/signup', newUser, function(req, res) {
+        console.log('new user added'); //works
+
+        // clears inputs once posted
+        $(usernameInput).val('');
+        $(passwordInput).val('');
+        $(confirmPasswordInput).val('');
+        $(nameInput).val('');
+        $(emailInput).val('');
+
+        //     // toggles modal (obviously)
+        $('#myModal').modal('toggle');
+      });
+      //
+      //   // leads user to blog page once they finished signing up
+      $('#continueToSite').on('click', function() {
+        window.location.href = '/dashboard';
+      });
+    };
+
+    validateNewUserData();
+
+  });
+});

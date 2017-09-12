@@ -59,7 +59,7 @@ $(document).ready(function() {
     if (userId) {
       userId = "/?user_id=" + userId;
     }
-    $.get("/api/posts" + userId, function(data) {
+    $.get("/posts" + userId, function(data) {
       console.log("Posts", data);
       posts = data;
       if (!posts || !posts.length) {

@@ -1,5 +1,4 @@
 var bCrypt = require('bcrypt-nodejs');
-// var signupJS = require('../../public/js/signup.js');
 
 module.exports = function(passport, user) {
 
@@ -35,7 +34,7 @@ module.exports = function(passport, user) {
           var data = {
             username: req.body.username,
             password: userPassword,
-            name: req.body.fullname,
+            name: req.body.name,
             email: email
           };
           console.log(data);
