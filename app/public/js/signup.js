@@ -74,11 +74,11 @@ $(document).ready(function() {
         $(nameInput).val('');
         $(emailInput).val('');
 
-        //     // toggles modal (obviously)
+        // toggles modal (obviously)
         $('#myModal').modal('toggle');
       });
-      //
-      //   // leads user to blog page once they finished signing up
+
+      // leads user to blog page once they finished signing up
       $('#continueToSite').on('click', function() {
         window.location.href = '/dashboard';
       });

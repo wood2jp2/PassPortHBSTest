@@ -22,5 +22,9 @@ module.exports = function(app) {
 
   app.get('/dashboard', function(req, res) {
     res.sendFile(path.join(__dirname, '../views/dashboard.hbs'))
-  })
+  });
+
+  app.get('/post', function(req, res) {
+    res.sendFile(path.join(__dirname, '../views/post.html'))
+  });
 };
