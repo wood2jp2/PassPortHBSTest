@@ -67,14 +67,13 @@ module.exports = function(passport, user) {
       var User = user;
       var isValidPassword = function(userpass, password) {
         return bCrypt.compareSync(password, userpass);
-      }
+      };
       User.findOne({
         where: {
           username: username
         }
       }).then(function(user) {
-        console.log(user.password);
-        console.log(password);
+        console.log(username);
         console.log(isValidPassword(user.password, password));
         if (!user) {
           return done(null, false, {
@@ -83,7 +82,6 @@ module.exports = function(passport, user) {
         }
         if (!isValidPassword(user.password, password)) {
           return done(null, false, {
-
             message: 'Incorrect password.'
           });
         }
