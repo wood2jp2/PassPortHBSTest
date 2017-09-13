@@ -25,10 +25,11 @@ module.exports = function(passport, user) {
         }
       }).then(function(user) {
         if (user) {
+          console.log('person is already signed up');
           return done(null, false, {
             message: 'That email is already taken'
           });
-          alert('asdf');
+
         } else {
           var userPassword = generateHash(password);
           var data = {
@@ -40,7 +41,7 @@ module.exports = function(passport, user) {
           console.log(data);
           User.create(data).then(function(newUser, created) {
             if (!newUser) {
-              alert('asdf');
+              console.log('asdf');
               return done(null, false);
             }
             if (newUser) {

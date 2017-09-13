@@ -27,4 +27,8 @@ module.exports = function(app) {
   app.get('/post', function(req, res) {
     res.sendFile(path.join(__dirname, '../views/post.html'))
   });
+
+  app.get('/logout', function(req, res) {
+    res.redirect('/home');
+  });
 };
