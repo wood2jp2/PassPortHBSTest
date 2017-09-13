@@ -1,4 +1,5 @@
 var authController = require('../controllers/authcontroller.js');
+var db = require('../models');
 
 module.exports = function(app, passport) {
 
@@ -25,5 +26,11 @@ module.exports = function(app, passport) {
       return next();
     res.redirect('/signin');
   };
+
+  app.post("/posts", function(req, res) {
+    db.Post.create(req.body).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
 
 }
