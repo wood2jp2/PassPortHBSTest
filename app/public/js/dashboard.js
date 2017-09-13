@@ -74,7 +74,7 @@ $(document).ready(function() {
   function deletePost(id) {
     $.ajax({
         method: "DELETE",
-        url: "/api/posts/" + id
+        url: "/posts/" + id
       })
       .done(function() {
         getPosts(postCategorySelect.val());
