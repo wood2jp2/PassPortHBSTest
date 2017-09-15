@@ -6,7 +6,8 @@ const
   bodyParser = require('body-parser'),
   env = require('dotenv').load(),
   path = require('path'),
-  exphbs = require('express-handlebars');
+  exphbs = require('express-handlebars'),
+  port = process.env.PORT || 5000;
 
 //For BodyParser
 app.use(bodyParser.urlencoded({
@@ -48,7 +49,7 @@ models.sequelize.sync().then(function() {
   console.log(err, "Something went wrong with the Database Update!")
 });
 
-app.listen(5000, function(err) {
+app.listen(port, function(err) {
   if (!err)
     console.log("Site is live on 5000");
   else console.log(err)
