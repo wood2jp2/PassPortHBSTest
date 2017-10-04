@@ -1,5 +1,3 @@
-A blogging platform built to build the excitement around Curb Your Enthusiasm Season 9. 
-
 A simple, yet complex, app to the burgeoning junior developer. Here, a user is able to either a) create a new account, or b) log in to an 
 already existing account. In order to implement passport user authentication, we actually had to break down our old, functioning app, and 
 re-build it around the passport necessities. It was tough, but possible, and fun to figure out. Sequelize takes care of creating each 
